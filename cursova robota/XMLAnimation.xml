@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Movies>
+	<Movie>
+		<Name>BLUE EYE SAMURAI</Name>
+		<Date>05.06.2024 11:00:00</Date>
+		<Genre>Action</Genre>
+		<Start>11:00</Start>
+		<Duration>383</Duration>
+		<End>17:23</End>
+	</Movie>
+	<Movie>
+		<Name>Over the Garden Wall</Name>
+		<Date>10.06.2024 17:00:00</Date>
+		<Genre>Psycho/Comedy</Genre>
+		<Start>17:00</Start>
+		<Duration>109</Duration>
+		<End>18:49</End>
+	</Movie>
+	<Movie>
+		<Name>Fantastic Mr. Fox</Name>
+		<Date>15.06.2024 12:00:00</Date>
+		<Genre>Action</Genre>
+		<Start>12:00</Start>
+		<Duration>87</Duration>
+		<End>13:27</End>
+	</Movie>
+	<Movie>
+		<Name>Corpse Bride</Name>
+		<Date>20.06.2024 13:00:00</Date>
+		<Genre>Tragedy</Genre>
+		<Start>13:00</Start>
+		<Duration>77</Duration>
+		<End>14:17</End>
+	</Movie>
+</Movies>

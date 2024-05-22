@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Movies>
+	<Movie>
+		<Name>Un Chien Andalou</Name>
+		<Date>04.06.2024</Date>
+		<Genre>Art-house</Genre>
+		<Start>17:00</Start>
+		<Duration>21</Duration>
+		<End>17:21</End>
+	</Movie>
+	<Movie>
+		<Name>Metropolis 1927</Name>
+		<Date>18.06.2024</Date>
+		<Genre>Sci-fi</Genre>
+		<Start>14:00</Start>
+		<Duration>153</Duration>
+		<End>16:33</End>
+	</Movie>
+	<Movie>
+		<Name>Three Colours: Red</Name>
+		<Date>22.06.2024</Date>
+		<Genre>Romantic/Sci-fi</Genre>
+		<Start>12:00</Start>
+		<Duration>100</Duration>
+		<End>13:40</End>
+	</Movie>
+	<Movie>
+		<Name>Gone Girl 2014</Name>
+		<Date>30.06.2024</Date>
+		<Genre>Psycho</Genre>
+		<Start>08:00</Start>
+		<Duration>144</Duration>
+		<End>10:24</End>
+	</Movie>
+</Movies>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Movies>
+	<Movie>
+		<Name>Chungking Express</Name>
+		<Date>08.06.2024</Date>
+		<Genre>Comedy/Romantic</Genre>
+		<Start>08:00</Start>
+		<Duration>103</Duration>
+		<End>09:40</End>
+	</Movie>
+	<Movie>
+		<Name>To Live</Name>
+		<Date>19.06.2024</Date>
+		<Genre>Comedy</Genre>
+		<Start>12:00</Start>
+		<Duration>133</Duration>
+		<End>14:13</End>
+	</Movie>
+	<Movie>
+		<Name>Farewell My Concubine</Name>
+		<Date>01.06.2024</Date>
+		<Genre>Tragedy/Romantic</Genre>
+		<Start>10:00</Start>
+		<Duration>171</Duration>
+		<End>12:51</End>
+	</Movie>
+	<Movie>
+		<Name>Lady Snowblood</Name>
+		<Date>22.06.2024</Date>
+		<Genre>Action</Genre>
+		<Start>11:00</Start>
+		<Duration>97</Duration>
+		<End>12:37</End>
+	</Movie>
+</Movies>

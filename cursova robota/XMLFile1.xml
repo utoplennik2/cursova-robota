@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Poster>
+    <Name>A taxi driver 2019</Name>
+    <Date>02.05.2024</Date>
+    <Genre>Drama/Comedy</Genre>
+    <Start>15:00</Start>
+    <Duration>138</Duration>
+    <End>17:18</End>
+  </Poster>
+  <Poster>
+    <Name>Azumanga daioh</Name>
+    <Date>07.05.2024</Date>
+    <Genre>Comedy</Genre>
+    <Start>10:00</Start>
+    <Duration>650</Duration>
+    <End>20:50</End>
+  </Poster>
+  <Poster>
+    <Name>Black Swan</Name>
+    <Date>14.05.2024</Date>
+    <Genre>Drama</Genre>
+    <Start>15:00</Start>
+    <Duration>100</Duration>
+    <End>16:40</End>
+  </Poster>
+  <Poster>
+    <Name>Monster 2023</Name>
+    <Date>01.05.2024</Date>
+    <Genre>Drama/Thrill</Genre>
+    <Start>12:00</Start>
+    <Duration>125</Duration>
+    <End>14:05</End>
+  </Poster>
+  <Poster>
+    <Name>Neon Genesis Evangelion</Name>
+    <Date>15.05.2024</Date>
+    <Genre>Psycho/Mecha</Genre>
+    <Start>13:00</Start>
+    <Duration>615</Duration>
+    <End>23:15</End>
+  </Poster>
+</NewDataSet>
