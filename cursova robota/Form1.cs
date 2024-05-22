@@ -16,15 +16,10 @@ namespace cursova_robota
             InitializeComponent();
             dataSet = new DataSet();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = null;
-        }
-
+  
         private void LoadDataFromXml(string xmlFilePath) //МЕТОД ПОСИЛАННЯ ХМЛ
         {
-            /*  try
+             try
               {
                   dataSet.Clear(); //очищення
                   dataSet.ReadXml(xmlFilePath);
@@ -58,7 +53,7 @@ namespace cursova_robota
               catch (Exception ex)
               {
                   MessageBox.Show("помилка при завантажені даних: " + ex.Message); //помилка
-              }*/
+              } 
              
                 XmlDocument xmlDocument = new XmlDocument();
                 string path = "C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml";
@@ -165,7 +160,7 @@ namespace cursova_robota
 
         private void downloadBut_Click(object sender, EventArgs e) //download from xml
         {
-            /* if (File.Exists("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml"))
+              if (File.Exists("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml"))
              {
                  DataSet ds = new DataSet();
                  ds.ReadXml("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml");
@@ -186,7 +181,7 @@ namespace cursova_robota
              else
              {
                  MessageBox.Show("сталася помилка."); //помилка
-             } */
+             }  
             LoadDataFromXml("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile2.xml");
            // dataGridView1.Sort(dataGridView1.Columns["Name"], System.ComponentModel.ListSortDirection.Ascending);
 
