@@ -32,6 +32,13 @@
             tabPage2 = new TabPage();
             tabControl1 = new TabControl();
             tabPage3 = new TabPage();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
@@ -52,26 +59,17 @@
             label11 = new Label();
             label10 = new Label();
             label3 = new Label();
-            dataGridView1 = new DataGridView();
             tabPage4 = new TabPage();
+            searchBut = new Button();
+            EndradioBut = new RadioButton();
+            dataGridView2 = new DataGridView();
             dateTimePicker3 = new DateTimePicker();
             ChoosingCinemaCBox = new ComboBox();
-            dataGridView2 = new DataGridView();
-            Column9 = new DataGridViewTextBoxColumn();
-            Column10 = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
-            Column12 = new DataGridViewTextBoxColumn();
-            Column13 = new DataGridViewTextBoxColumn();
-            Column14 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
             searchBut4 = new Button();
             searchBut3 = new Button();
             searchBut2 = new Button();
-            searchBut = new Button();
             dateTimePicker2 = new DateTimePicker();
             weekendRadioBut = new RadioButton();
-            EndradioBut = new RadioButton();
             AmountSessionLbl = new Label();
             SessionPerDayLbl = new Label();
             label9 = new Label();
@@ -82,18 +80,18 @@
             label2 = new Label();
             label1 = new Label();
             tabPage5 = new TabPage();
+            dataGridView3 = new DataGridView();
+            Column15 = new DataGridViewTextBoxColumn();
+            Column16 = new DataGridViewTextBoxColumn();
+            Column17 = new DataGridViewTextBoxColumn();
+            Column18 = new DataGridViewTextBoxColumn();
+            Column19 = new DataGridViewTextBoxColumn();
+            Column20 = new DataGridViewTextBoxColumn();
             ClearBut = new Button();
             AnimBut = new Button();
             EuropeBut = new Button();
             AsiaBut = new Button();
-            dataGridView3 = new DataGridView();
             label6 = new Label();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -136,6 +134,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(dataGridView1);
             tabPage3.Controls.Add(textBox5);
             tabPage3.Controls.Add(textBox4);
             tabPage3.Controls.Add(textBox3);
@@ -156,7 +155,6 @@
             tabPage3.Controls.Add(label11);
             tabPage3.Controls.Add(label10);
             tabPage3.Controls.Add(label3);
-            tabPage3.Controls.Add(dataGridView1);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
@@ -164,6 +162,57 @@
             tabPage3.TabIndex = 0;
             tabPage3.Text = "Перша сторінка";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dataGridView1.Location = new Point(8, 131);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(684, 225);
+            dataGridView1.TabIndex = 23;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column1.HeaderText = "Name";
+            Column1.Name = "Column1";
+            Column1.Width = 64;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column2.HeaderText = "Date";
+            Column2.Name = "Column2";
+            Column2.Width = 56;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column3.HeaderText = "Genre";
+            Column3.Name = "Column3";
+            Column3.Width = 63;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column4.HeaderText = "Start";
+            Column4.Name = "Column4";
+            Column4.Width = 56;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column5.HeaderText = "Duration";
+            Column5.Name = "Column5";
+            Column5.Width = 78;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column6.HeaderText = "End";
+            Column6.Name = "Column6";
+            Column6.Width = 52;
             // 
             // textBox5
             // 
@@ -261,29 +310,29 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(559, 98);
+            label18.Location = new Point(543, 98);
             label18.Name = "label18";
-            label18.Size = new Size(27, 15);
+            label18.Size = new Size(43, 15);
             label18.TabIndex = 11;
-            label18.Text = "End";
+            label18.Text = "Кінець";
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(533, 63);
+            label17.Location = new Point(520, 63);
             label17.Name = "label17";
-            label17.Size = new Size(53, 15);
+            label17.Size = new Size(66, 15);
             label17.TabIndex = 10;
-            label17.Text = "Duration";
+            label17.Text = "Тривалість";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(329, 98);
+            label16.Location = new Point(306, 98);
             label16.Name = "label16";
-            label16.Size = new Size(31, 15);
+            label16.Size = new Size(54, 15);
             label16.TabIndex = 9;
-            label16.Text = "Start";
+            label16.Text = "Початок";
             // 
             // label15
             // 
@@ -292,25 +341,25 @@
             label15.Name = "label15";
             label15.Size = new Size(38, 15);
             label15.TabIndex = 8;
-            label15.Text = "Genre";
+            label15.Text = "Жанр";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(8, 95);
+            label14.Location = new Point(30, 93);
             label14.Name = "label14";
-            label14.Size = new Size(31, 15);
+            label14.Size = new Size(32, 15);
             label14.TabIndex = 7;
-            label14.Text = "Date";
+            label14.Text = "Дата";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(8, 63);
+            label13.Location = new Point(23, 63);
             label13.Name = "label13";
             label13.Size = new Size(39, 15);
             label13.TabIndex = 6;
-            label13.Text = "Name";
+            label13.Text = "Назва";
             // 
             // label11
             // 
@@ -340,28 +389,18 @@
             label3.TabIndex = 3;
             label3.Text = "Інформація про сеанси. Поточний місяць";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = SystemColors.Info;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dataGridView1.Location = new Point(8, 119);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(684, 240);
-            dataGridView1.TabIndex = 0;
-            // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(searchBut);
+            tabPage4.Controls.Add(EndradioBut);
+            tabPage4.Controls.Add(dataGridView2);
             tabPage4.Controls.Add(dateTimePicker3);
             tabPage4.Controls.Add(ChoosingCinemaCBox);
-            tabPage4.Controls.Add(dataGridView2);
             tabPage4.Controls.Add(searchBut4);
             tabPage4.Controls.Add(searchBut3);
             tabPage4.Controls.Add(searchBut2);
-            tabPage4.Controls.Add(searchBut);
             tabPage4.Controls.Add(dateTimePicker2);
             tabPage4.Controls.Add(weekendRadioBut);
-            tabPage4.Controls.Add(EndradioBut);
             tabPage4.Controls.Add(AmountSessionLbl);
             tabPage4.Controls.Add(SessionPerDayLbl);
             tabPage4.Controls.Add(label9);
@@ -379,6 +418,37 @@
             tabPage4.Text = "Друга сторінка";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // searchBut
+            // 
+            searchBut.Enabled = false;
+            searchBut.Location = new Point(567, 34);
+            searchBut.Name = "searchBut";
+            searchBut.Size = new Size(120, 23);
+            searchBut.TabIndex = 30;
+            searchBut.Text = "пошук";
+            searchBut.UseVisualStyleBackColor = true;
+            searchBut.Click += searchBut_Click;
+            // 
+            // EndradioBut
+            // 
+            EndradioBut.AutoSize = true;
+            EndradioBut.Location = new Point(516, 38);
+            EndradioBut.Name = "EndradioBut";
+            EndradioBut.Size = new Size(28, 19);
+            EndradioBut.TabIndex = 29;
+            EndradioBut.TabStop = true;
+            EndradioBut.Text = " ";
+            EndradioBut.UseVisualStyleBackColor = true;
+            EndradioBut.CheckedChanged += EndradioBut_CheckedChanged;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(0, 245);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(700, 187);
+            dataGridView2.TabIndex = 28;
+            // 
             // dateTimePicker3
             // 
             dateTimePicker3.Format = DateTimePickerFormat.Short;
@@ -394,58 +464,6 @@
             ChoosingCinemaCBox.Name = "ChoosingCinemaCBox";
             ChoosingCinemaCBox.Size = new Size(121, 23);
             ChoosingCinemaCBox.TabIndex = 27;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = SystemColors.Info;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column9, Column10, Column11, Column12, Column13, Column14, Column7, Column8 });
-            dataGridView2.Location = new Point(12, 245);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(685, 187);
-            dataGridView2.TabIndex = 24;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Name";
-            Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            Column10.HeaderText = "Date";
-            Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            Column11.HeaderText = "Genre";
-            Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            Column12.HeaderText = "Start";
-            Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            Column13.HeaderText = "Duration";
-            Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            Column14.HeaderText = "End";
-            Column14.Name = "Column14";
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Day";
-            Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column8.HeaderText = "Cinema";
-            Column8.Name = "Column8";
-            Column8.Width = 73;
             // 
             // searchBut4
             // 
@@ -469,25 +487,14 @@
             // 
             // searchBut2
             // 
+            searchBut2.Enabled = false;
             searchBut2.Location = new Point(567, 65);
             searchBut2.Name = "searchBut2";
             searchBut2.Size = new Size(120, 23);
             searchBut2.TabIndex = 21;
             searchBut2.Text = "пошук";
             searchBut2.UseVisualStyleBackColor = true;
-            searchBut2.Visible = false;
             searchBut2.Click += searchBut2_Click_1;
-            // 
-            // searchBut
-            // 
-            searchBut.Location = new Point(567, 36);
-            searchBut.Name = "searchBut";
-            searchBut.Size = new Size(120, 23);
-            searchBut.TabIndex = 20;
-            searchBut.Text = "пошук";
-            searchBut.UseVisualStyleBackColor = true;
-            searchBut.Visible = false;
-            searchBut.Click += searchBut_Click_1;
             // 
             // dateTimePicker2
             // 
@@ -507,17 +514,6 @@
             weekendRadioBut.Text = " ";
             weekendRadioBut.UseVisualStyleBackColor = true;
             weekendRadioBut.CheckedChanged += weekendRadioBut_CheckedChanged_1;
-            // 
-            // EndradioBut
-            // 
-            EndradioBut.AutoSize = true;
-            EndradioBut.Location = new Point(516, 40);
-            EndradioBut.Name = "EndradioBut";
-            EndradioBut.Size = new Size(28, 19);
-            EndradioBut.TabIndex = 17;
-            EndradioBut.Text = " ";
-            EndradioBut.UseVisualStyleBackColor = true;
-            EndradioBut.CheckedChanged += EndradioBut_CheckedChanged_1;
             // 
             // AmountSessionLbl
             // 
@@ -602,11 +598,11 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(dataGridView3);
             tabPage5.Controls.Add(ClearBut);
             tabPage5.Controls.Add(AnimBut);
             tabPage5.Controls.Add(EuropeBut);
             tabPage5.Controls.Add(AsiaBut);
-            tabPage5.Controls.Add(dataGridView3);
             tabPage5.Controls.Add(label6);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
@@ -614,6 +610,57 @@
             tabPage5.TabIndex = 2;
             tabPage5.Text = "Третя сторінка";
             tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { Column15, Column16, Column17, Column18, Column19, Column20 });
+            dataGridView3.Location = new Point(8, 39);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.Size = new Size(683, 302);
+            dataGridView3.TabIndex = 6;
+            // 
+            // Column15
+            // 
+            Column15.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column15.HeaderText = "Name";
+            Column15.Name = "Column15";
+            Column15.Width = 64;
+            // 
+            // Column16
+            // 
+            Column16.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column16.HeaderText = "Date";
+            Column16.Name = "Column16";
+            Column16.Width = 56;
+            // 
+            // Column17
+            // 
+            Column17.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column17.HeaderText = "Genre";
+            Column17.Name = "Column17";
+            Column17.Width = 63;
+            // 
+            // Column18
+            // 
+            Column18.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column18.HeaderText = "Start";
+            Column18.Name = "Column18";
+            Column18.Width = 56;
+            // 
+            // Column19
+            // 
+            Column19.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column19.HeaderText = "Duration";
+            Column19.Name = "Column19";
+            Column19.Width = 78;
+            // 
+            // Column20
+            // 
+            Column20.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column20.HeaderText = "End";
+            Column20.Name = "Column20";
+            Column20.Width = 52;
             // 
             // ClearBut
             // 
@@ -655,15 +702,6 @@
             AsiaBut.UseVisualStyleBackColor = true;
             AsiaBut.Click += AsiaBut_Click;
             // 
-            // dataGridView3
-            // 
-            dataGridView3.BackgroundColor = SystemColors.Info;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(8, 64);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(676, 262);
-            dataGridView3.TabIndex = 1;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -673,37 +711,6 @@
             label6.Size = new Size(474, 25);
             label6.TabIndex = 0;
             label6.Text = "Довідкова інформація про сеанси. Наступний місяць";
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "Name";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Date";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Genre";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Start";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Duration";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "End";
-            Column6.Name = "Column6";
             // 
             // Form1
             // 
@@ -733,7 +740,6 @@
         private TabPage tabPage3;
         private TabPage tabPage4;
         private TabPage tabPage5;
-        private DataGridView dataGridView1;
         private Label label3;
         private Label label1;
         private Label label9;
@@ -758,19 +764,15 @@
         private Button saveBut;
         private Button addBut;
         private Label label18;
-        private DataGridView dataGridView2;
         private Button searchBut4;
         private Button searchBut3;
         private Button searchBut2;
-        private Button searchBut;
         private DateTimePicker dateTimePicker2;
         private RadioButton weekendRadioBut;
-        private RadioButton EndradioBut;
         private Button ClearBut;
         private Button AnimBut;
         private Button EuropeBut;
         private Button AsiaBut;
-        private DataGridView dataGridView3;
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
@@ -779,14 +781,17 @@
         private DateTimePicker dateTimePicker1;
         private ComboBox ChoosingCinemaCBox;
         private DateTimePicker dateTimePicker3;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
-        private DataGridViewTextBoxColumn Column13;
-        private DataGridViewTextBoxColumn Column14;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
+        private DataGridView dataGridView3;
+        private DataGridViewTextBoxColumn Column15;
+        private DataGridViewTextBoxColumn Column16;
+        private DataGridViewTextBoxColumn Column17;
+        private DataGridViewTextBoxColumn Column18;
+        private DataGridViewTextBoxColumn Column19;
+        private DataGridViewTextBoxColumn Column20;
+        private Button searchBut;
+        private RadioButton EndradioBut;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
