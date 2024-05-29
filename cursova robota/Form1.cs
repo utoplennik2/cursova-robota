@@ -2,12 +2,15 @@ using Microsoft.VisualBasic.ApplicationServices;
 using System.Data;
 using System.Globalization;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace cursova_robota
 {
 
     public partial class Form1 : Form
     {
+        private string xmlFilePath = "C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml";
+        private string xmlFilePath2 = "C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile2.xml";
         List<Poster> poster = new List<Poster>();
 
         private DataSet dataSet;
@@ -15,75 +18,35 @@ namespace cursova_robota
         {
             InitializeComponent();
             dataSet = new DataSet();
+            DataFromXml2(xmlFilePath2);
         }
-  
-        private void LoadDataFromXml(string xmlFilePath) //МЕТОД ПОСИЛАННЯ ХМЛ
+
+        
+
+        private void LoadDataFromXml(string xmlFilePath) //load data from xml
         {
-             try
-              {
-                  dataSet.Clear(); //очищення
-                  dataSet.ReadXml(xmlFilePath);
-
-                  DataTable dt = new DataTable(); //правильний поряддок для стовпців табл
-                  dt.Columns.Add("Name", typeof(string));
-                  dt.Columns.Add("Date", typeof(string));
-                  dt.Columns.Add("Genre", typeof(string));
-                  dt.Columns.Add("Start", typeof(string));
-                  dt.Columns.Add("Duration", typeof(string));
-                  dt.Columns.Add("End", typeof(string));
-
-                  foreach (DataRow cinemaRow in dataSet.Tables["Poster"].Rows)
-                  {
-                      foreach (DataRow posterRow in cinemaRow.GetChildRows("Cinema_Poster"))
-                      {
-                          // ЗАПОВНЕННЯ ТАБЛИЧКИ
-                          DataRow newRow = dt.NewRow();
-                          newRow["Name"] = (string)posterRow["Name"];
-                          newRow["Date"] = (string)posterRow["Date"];
-                          newRow["Genre"] = (string)posterRow["Genre"];
-                          newRow["Start"] = (string)posterRow["Start"];
-                          newRow["Duration"] = (string)posterRow["Duration"];
-                          newRow["End"] = (string)posterRow["End"];
-
-                          dt.Rows.Add(newRow); //додавання рядка
-                      }
-                  }
-                  dataGridView1.DataSource = dt;
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show("помилка при завантажені даних: " + ex.Message); //помилка
-              } 
-             
-                XmlDocument xmlDocument = new XmlDocument();
-                string path = "C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml";
-                xmlDocument.Load(path);
-
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Name", typeof(string));
-                dt.Columns.Add("Date", typeof(string));
-                dt.Columns.Add("Genre", typeof(string));
-                dt.Columns.Add("Start", typeof(string));
-                dt.Columns.Add("Duration", typeof(int));
-                dt.Columns.Add("End", typeof(string));
-
-                XmlNodeList posterNodes = xmlDocument.SelectNodes("//Poster");
-
-                foreach (XmlNode node in posterNodes)
+            if (File.Exists(xmlFilePath))
+            {
+                dataSet.Clear();
+                dataSet.ReadXml(xmlFilePath);
+                DataTable posterTable = dataSet.Tables["Poster"];
+                dataGridView1.Rows.Clear();
+                foreach (DataRow row in posterTable.Rows)
                 {
-                    DataRow dr = dt.NewRow();
-                    dr["Name"] = node["Name"].InnerText;
-                    dr["Date"] = node["Date"].InnerText;
-                    dr["Genre"] = node["Genre"].InnerText;
-                    dr["Start"] = node["Start"].InnerText;
-                    dr["Duration"] = int.Parse(node["Duration"].InnerText);
-                    dr["End"] = node["End"].InnerText;
-                    dt.Rows.Add(dr);
+                    int n = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[n].Cells[0].Value = row["Name"];
+                    dataGridView1.Rows[n].Cells[1].Value = row["Date"];
+                    dataGridView1.Rows[n].Cells[2].Value = row["Genre"];
+                    dataGridView1.Rows[n].Cells[3].Value = row["Start"];
+                    dataGridView1.Rows[n].Cells[4].Value = row["Duration"];
+                    dataGridView1.Rows[n].Cells[5].Value = row["End"];
+                    dataGridView1.Sort(dataGridView1.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
                 }
-
-                dataGridView1.AutoGenerateColumns = true;
-                dataGridView1.DataSource = dt;
-             
+            }
+            else
+            {
+                MessageBox.Show("File not found.", "Error");
+            }
         }
 
 
@@ -146,7 +109,7 @@ namespace cursova_robota
 
         }
 
-        private void deleteBut_Click(object sender, EventArgs e) // delete button
+        private void deleteBut_Click(object sender, EventArgs e) // delete the row
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -160,30 +123,7 @@ namespace cursova_robota
 
         private void downloadBut_Click(object sender, EventArgs e) //download from xml
         {
-              if (File.Exists("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml"))
-             {
-                 DataSet ds = new DataSet();
-                 ds.ReadXml("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml");
-
-
-                 foreach (DataRow item in ds.Tables["Poster"].Rows)
-                 {
-                     int n = dataGridView1.Rows.Add();
-                     dataGridView1.Rows[n].Cells[0].Value = item["Name"];
-                     dataGridView1.Rows[n].Cells[1].Value = item["Date"];
-                     dataGridView1.Rows[n].Cells[2].Value = item["Genre"];
-                     dataGridView1.Rows[n].Cells[3].Value = item["Start"];
-                     dataGridView1.Rows[n].Cells[4].Value = item["Duration"];
-                     dataGridView1.Rows[n].Cells[5].Value = item["End"];
-                     dataGridView1.Sort(dataGridView1.Columns["Name"], System.ComponentModel.ListSortDirection.Ascending);
-                 }
-             }
-             else
-             {
-                 MessageBox.Show("сталася помилка."); //помилка
-             }  
-            LoadDataFromXml("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile2.xml");
-           // dataGridView1.Sort(dataGridView1.Columns["Name"], System.ComponentModel.ListSortDirection.Ascending);
+            LoadDataFromXml(xmlFilePath);
 
         }
 
@@ -191,6 +131,9 @@ namespace cursova_robota
         {
             dataGridView1.Rows.Clear(); //очистка
         }
+
+
+
 
 
 
@@ -206,39 +149,11 @@ namespace cursova_robota
             public string Cinema { get; set; }
 
         }
-
-        private void DataFromXml(string filePathXmL) //path 1 xml file
+   
+        private void DataFromXml2(string xmlFilePath) //path file xml 2
         {
             XmlDocument xmlDocAllMovies = new XmlDocument();
-            xmlDocAllMovies.Load("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile1.xml");
-
-            XmlNodeList itemNodes = xmlDocAllMovies.SelectNodes("//Poster");
-
-            foreach (XmlNode elem in xmlDocAllMovies.DocumentElement)
-            {
-                string nameFilm = string.Format(elem["Name"].InnerText);
-                string date = string.Format(elem["Date"].InnerText);
-                string genre = string.Format(elem["Genre"].InnerText);
-                string timestart = string.Format(elem["Start"].InnerText);
-                int duration = Convert.ToInt32(elem["Duration"].InnerText);
-                string timeend = string.Format(elem["End"].InnerText);
-
-
-                poster.Add(new Poster
-                {
-                    Film = nameFilm,
-                    Genre = genre,
-                    Date = date,
-                    Start = timestart,
-                    Duration = duration,
-                    End = timeend,
-                });
-            }
-        }
-        private void DataFromXml2(string filePathXmL) //path file xml 2
-        {
-            XmlDocument xmlDocAllMovies = new XmlDocument();
-            xmlDocAllMovies.Load("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile2.xml");
+            xmlDocAllMovies.Load(xmlFilePath);
 
             XmlNodeList itemNodes = xmlDocAllMovies.SelectNodes("//Poster");
 
@@ -268,9 +183,7 @@ namespace cursova_robota
         }
 
         private void EndOfFilm() // 1 TASK, закінчення сеансу
-        {
-            DataFromXml2("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile2.xml");
-
+        { 
             dataGridView2.ColumnCount = 4;
             dataGridView2.Columns[0].Name = "Name";
             dataGridView2.Columns[1].Name = "Date";
@@ -278,27 +191,30 @@ namespace cursova_robota
             dataGridView2.Columns[3].Name = "End";
 
             dataGridView2.Rows.Clear(); //очистка
-            foreach (var poster in poster)
+            foreach (var posterd in poster)
             {
-                dataGridView2.Rows.Add(poster.Film, poster.Date, poster.Start, poster.End);
+                dataGridView2.Rows.Add(posterd.Film, posterd.Date, posterd.Start, posterd.End);
             }
         }
 
-        private void EndradioBut_CheckedChanged_1(object sender, EventArgs e) //кнопка перемикач
+        private void EndradioBut_CheckedChanged(object sender, EventArgs e)
         {
             if (EndradioBut.Checked == true)
             {
                 searchBut.Enabled = true;
             }
+            else
+            {
+                searchBut.Enabled = false;
+            }
         }
 
-        private void searchBut_Click_1(object sender, EventArgs e) //кнопка пошуку
+        private void searchBut_Click(object sender, EventArgs e)
         {
-            if (EndradioBut.Checked)
+            if (EndradioBut.Checked == true)
             {
                 EndOfFilm();
             }
-
         }
 
         private void weekendRadioBut_CheckedChanged_1(object sender, EventArgs e) //перемикач кнопки
@@ -352,9 +268,8 @@ namespace cursova_robota
             var filteredMovies = poster.Where(movie => movie.Cinema == selectedCinema && movie.Date == date).ToList();
             foreach (var movie in filteredMovies)
             {
-                dataGridView2.Rows.Add(movie.Film, movie.Day, movie.Date, movie.Start, movie.Duration, movie.End);
+                dataGridView2.Rows.Add(movie.Film, movie.Date, movie.Genre, movie.Start, movie.Duration, movie.End);
             }
-
         }
 
 
@@ -382,8 +297,7 @@ namespace cursova_robota
 
 
         private void WeekendSession() //TASK 2, WEEKEND
-        {
-            DataFromXml2("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFile2.xml");
+        { 
 
             dataGridView2.ColumnCount = 6;
             dataGridView2.Columns[0].Name = "Name";
@@ -403,7 +317,7 @@ namespace cursova_robota
             }
 
         }
-       
+
         private void InsertionSortByStartTime(List<Poster> posters) //insertion sort
         {
             int n = posters.Count;
@@ -424,7 +338,7 @@ namespace cursova_robota
             }
         }
 
-        private void AsiaBut_Click(object sender, EventArgs e)
+        private void AsiaBut_Click(object sender, EventArgs e)  //task 5
         {
 
             if (File.Exists("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFileAsia.xml"))
@@ -432,18 +346,19 @@ namespace cursova_robota
                 DataSet ds = new DataSet();
                 ds.ReadXml("C:\\Users\\HP\\source\\repos\\cursova robota\\cursova robota\\XMLFileAsia.xml");
 
-                foreach (DataRow item in ds.Tables["Movie"].Rows)
+
+                foreach (DataRow row in ds.Tables["Movie"].Rows)
                 {
                     int n = dataGridView3.Rows.Add();
-                    dataGridView3.Rows[n].Cells[0].Value = item["Name"];
-                    dataGridView3.Rows[n].Cells[1].Value = item["Date"];
-                    dataGridView3.Rows[n].Cells[2].Value = item["Genre"];
-                    dataGridView3.Rows[n].Cells[3].Value = item["Start"];
-                    dataGridView3.Rows[n].Cells[4].Value = item["Duration"];
-                    dataGridView3.Rows[n].Cells[5].Value = item["End"];
-
+                    dataGridView3.Rows[n].Cells[0].Value = row["Name"];
+                    dataGridView3.Rows[n].Cells[1].Value = row["Date"];
+                    dataGridView3.Rows[n].Cells[2].Value = row["Genre"];
+                    dataGridView3.Rows[n].Cells[3].Value = row["Start"];
+                    dataGridView3.Rows[n].Cells[4].Value = row["Duration"];
+                    dataGridView3.Rows[n].Cells[5].Value = row["End"];
                     dataGridView3.Sort(dataGridView3.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
                 }
+
             }
             else
             {

@@ -112,7 +112,7 @@
 	</Poster>
 	<Poster>
 		<Name>Neon Genesis Evangelion</Name>
-		<Date>15.05.2024</Date>
+		<Date>20.05.2024</Date>
 		<Genre>Psycho/Mecha</Genre>
 		<Start>13:00</Start>
 		<Duration>615</Duration>
@@ -120,22 +120,4 @@
 		<Day>Wednesday</Day>
 		<Cinema>AnimationFilm</Cinema>
 	</Poster>
-	<Poster>
-		<Name>Spirited Ways</Name>
-		<Date>20.05.2024</Date>
-		<Genre>Romantic/Adventure</Genre>
-		<Start>15:00</Start>
-		<Duration>125</Duration>
-		<End>17:05</End>
-		<Day>Monday</Day>
-		<Cinema>AnimationFilm</Cinema>
-	</Poster>
-	<Name>Whisper of the Heart</Name>
-	<Date>20.05.2024</Date>
-	<Genre>Romantic/Adventure</Genre>
-	<Start>18:00</Start>
-	<Duration>111</Duration>
-	<End>19:41</End>
-	<Day>Monday</Day>
-	<Cinema>AnimationFilm</Cinema>
 </NewDataSet>
